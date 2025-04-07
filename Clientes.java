@@ -30,7 +30,7 @@ public class Clientes {
 
     @Override
     public String toString() {
-        return "Tarefa    : " + "id=" + id + "\n" +
+        return "Cliente   : " + "id=" + id + "\n" +
                 "Nome     : " + nome + "\n" +
                 "Endereço : " + endereco + "\n" +
                 "Cidade   : " + cidade;
