@@ -1,51 +1,14 @@
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
-        Lista listaCliente = new Lista();
-        Scanner scanner = new Scanner(System.in);
 
-        int opcao;
+        Aluno aluno1 = new Aluno("Matheus Saporito", 21, 1.74, "matheussapo@yahoo.com.br", 822158544, 10, 0);
+        Aluno aluno2 = new Aluno("Guilherme", 23, 1.83, "guilhermeads91@gmail.com", 822143269, 10, 0);
+        Professor professor1 = new Professor("Danilo", 39, 1.80, "danilo.souza@ulife.com.br", 498213748);
+        Coordenador coordenador1 = new Coordenador("Edipo", 36, 1.90, "edipo@ulife.com.br", 172917312);
+        aluno1.exibirInfoAluno();
+        aluno2.exibirInfoAluno();
+        professor1.exibirInfoProfessor();
+        coordenador1.exibirInfoCoordenador();
 
-        do {
-            System.out.println("\nMenu:");
-            System.out.println("1 - Adicionar Cliente");
-            System.out.println("2 - Remover Cliente");
-            System.out.println("3 - Listar Clientes");
-            System.out.println("0 - Sair");
-            System.out.print("Escolha uma opção: ");
-            opcao = scanner.nextInt();
-            scanner.nextLine();
-
-            switch (opcao) {
-                case 1:
-                    System.out.print("Digite os dados do cliente. " + "\n");
-                    System.out.print("Digite o nome do cliente: ");
-                    String nome = scanner.nextLine();
-                    System.out.print("Digite o endereço do cliente: ");
-                    String endereco = scanner.nextLine();
-                    System.out.print("Digite a cidade do cliente:");
-                    String cidade = scanner.nextLine();
-                    listaCliente.addCliente(nome, endereco, cidade);
-
-                    break;
-                case 2:
-                    System.out.print("Digite o id do cliente a remover: ");
-                    int removerId = scanner.nextInt();
-                    listaCliente.removerCliente(removerId);
-                    break;
-
-                case 3:
-                    listaCliente.listaClientes();
-                    break;
-                case 0:
-                    System.out.println("Saindo...");
-                    break;
-                default:
-                    System.out.println("Opção inválida.");
-            }
-        } while (opcao != 0);
-
-        scanner.close();
     }
 }
