@@ -7,6 +7,16 @@ public class Veiculo {
     private double combustivel;
     private boolean motorLigado;
 
+    public Veiculo(String marca, String modelo, int ano, double combustivel) {
+
+        this.marca = marca;
+        this.modelo = modelo;
+        this.ano = ano;
+        this.combustivel = combustivel;
+        this.velocidadeAtual = 0.0;
+        this.motorLigado = false;
+    }
+
     public int getAno() {
         return ano;
     }
@@ -69,6 +79,7 @@ public class Veiculo {
             System.out.println("Motor já está desligado!");
 
         } else {
+            this.velocidadeAtual = 0;
             this.motorLigado = false;
             System.out.println("Motor desligado.");
         }
@@ -76,16 +87,21 @@ public class Veiculo {
 
     public void acelerar() {
         if (motorLigado) {
-            this.velocidadeAtual = this.velocidadeAtual + 10;
+            if (this.combustivel > 0) {
+                this.velocidadeAtual = this.velocidadeAtual + 10;
+                this.combustivel = combustivel - 0.5;
+            } else {
+                System.out.println("Não é possivel acelerar sem combustível!");
+            }
         } else {
             System.out.println("Ligue o motor primeiro");
         }
     }
 
     public void frear() {
-        if (velocidadeAtual > 0) {
-            if (velocidadeAtual < 0) {
-                velocidadeAtual = 0;
+        if (this.velocidadeAtual > 0) {
+            if (this.velocidadeAtual < 0) {
+                this.velocidadeAtual = 0;
             } else {
                 this.velocidadeAtual = this.velocidadeAtual - 10;
             }
@@ -95,15 +111,11 @@ public class Veiculo {
     }
 
     public void exibirInfo() {
-        System.out.print("Marca do veículo: " + marca);
-        System.out.print("\n Modelo do veículo: " + modelo);
-        System.out.print("\n Ano do veículo: " + ano);
-        System.out.print("\n Velocidade atual do veículo: " + velocidadeAtual);
-        System.out.print("\n Combustivel restante: " + combustivel);
-        if (motorLigado) {
-            System.out.print("\n Estado do motor: Motor ligado.");
-        } else {
-            System.out.print("\n Estado do motor: Motor desligado.");
-        }
+        System.out.println("Marca do veículo: " + this.marca);
+        System.out.println("Modelo do veículo: " + this.modelo);
+        System.out.println("Ano do veículo: " + this.ano);
+        System.out.println("Velocidade atual do veículo: " + this.velocidadeAtual);
+        System.out.println("Combustivel restante: " + this.combustivel);
+        System.out.println("Estado do motor: " + (motorLigado ? "Ligado" : "Desligado"));
     }
 }

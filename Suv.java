@@ -1,16 +1,23 @@
-public class Suv {
-    private static double portaMalasVolume;
+public class Suv extends Carro {
+    private double portaMalasVolume;
 
-    public static void main(String[] args) {
+    public Suv(String marca, String modelo, int ano, double combustivel, int numeroPortas, double portaMalasVolume) {
 
-        Veiculo ix35 = new Veiculo();
+        super(marca, modelo, ano, combustivel, numeroPortas);
+        this.portaMalasVolume = portaMalasVolume;
+    }
 
-        ix35.setModelo("ix35");
-        ix35.setAno(2018);
-        ix35.setMarca("Hyundai");
-        portaMalasVolume = 728;
+    public double getPortaMalasVolume() {
+        return portaMalasVolume;
+    }
 
-        ix35.exibirInfo();
-        System.out.print("\n Volume do porta malas: " + portaMalasVolume);
+    public void setPortaMalasVolume(double portaMalasVolume) {
+        this.portaMalasVolume = portaMalasVolume;
+    }
+
+    public void exibirInfoSuv(){
+
+        super.exibirInfoCarro();
+        System.out.println("Volume do porta malas: " + this.portaMalasVolume + "L");
     }
 }
