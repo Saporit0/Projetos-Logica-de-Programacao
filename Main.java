@@ -31,13 +31,13 @@ public class Main {
                     System.out.print("Digite o ano do veículo:");
                     int ano = scanner.nextInt();
                     sedan.setAno(ano);
-                    System.out.println("Digite a quantidade de combustível atual do veículo: ");
+                    System.out.print("Digite a quantidade de combustível atual do veículo: ");
                     double combustivel = scanner.nextDouble();
                     sedan.setCombustivel(combustivel);
-                    System.out.println("Digite quantas portas o veículo possui: ");
+                    System.out.print("Digite quantas portas o veículo possui: ");
                     int numeroPorta = scanner.nextInt();
                     sedan.setNumeroPorta(numeroPorta);
-                    System.out.println("O veículo possui teto solar? ");
+                    System.out.print("O veículo possui teto solar? ");
                     boolean temTetoSolar = scanner.nextBoolean();
                     sedan.setTemTetoSolar(temTetoSolar);
 
@@ -58,23 +58,30 @@ public class Main {
                         switch (opcao2) {
                             case 1:
                                 sedan.ligarMotor();
+                                break;
                             case 2:
                                 sedan.desligarMotor();
+                                break;
                             case 3:
                                 sedan.acelerar();
+                                break;
                             case 4:
                                 sedan.frear();
+                                break;
                             case 5:
                                 sedan.buzinar();
+                                break;
                             case 6:
                                 sedan.exibirInfoSedan();
+                                break;
                             case 0:
                                 System.out.println("Saindo.");
+                                break;
                             default:
                                 System.out.println("Opção inválida.");
                         }
-
                     } while (opcao2 != 0);
+                    break;
                 case 2:
                     System.out.print("Digite os dados do veículo. " + "\n");
                     System.out.print("Digite o marca do veículo: ");
@@ -86,13 +93,13 @@ public class Main {
                     System.out.print("Digite o ano do veículo:");
                     int ano2 = scanner.nextInt();
                     suv.setAno(ano2);
-                    System.out.println("Digite a quantidade de combustível atual do veículo: ");
+                    System.out.print("Digite a quantidade de combustível atual do veículo: ");
                     double combustivel2 = scanner.nextDouble();
                     suv.setCombustivel(combustivel2);
-                    System.out.println("Digite quantas portas o veículo possui: ");
+                    System.out.print("Digite quantas portas o veículo possui: ");
                     int numeroPorta2 = scanner.nextInt();
                     suv.setNumeroPorta(numeroPorta2);
-                    System.out.println("Digite o volume do porta malas: ");
+                    System.out.print("Digite o volume do porta malas: ");
                     double portaMalasVolume = scanner.nextDouble();
                     suv.setPortaMalasVolume(portaMalasVolume);
 
@@ -113,23 +120,30 @@ public class Main {
                         switch (opcao2) {
                             case 1:
                                 suv.ligarMotor();
+                                break;
                             case 2:
                                 suv.desligarMotor();
+                                break;
                             case 3:
                                 suv.acelerar();
+                                break;
                             case 4:
                                 suv.frear();
+                                break;
                             case 5:
                                 suv.buzinar();
+                                break;
                             case 6:
                                 suv.exibirInfoSuv();
+                                break;
                             case 0:
                                 System.out.println("Saindo.");
+                                break;
                             default:
                                 System.out.println("Opção inválida.");
                         }
-
                     } while (opcao2 != 0);
+                    break;
                 case 3:
                     System.out.print("Digite os dados do veículo. " + "\n");
                     System.out.print("Digite o marca do veículo: ");
@@ -141,10 +155,10 @@ public class Main {
                     System.out.print("Digite o ano do veículo:");
                     int ano3 = scanner.nextInt();
                     moto.setAno(ano3);
-                    System.out.println("Digite a quantidade de combustível atual do veículo: ");
+                    System.out.print("Digite a quantidade de combustível atual do veículo: ");
                     double combustivel3 = scanner.nextDouble();
                     moto.setCombustivel(combustivel3);
-                    System.out.println("O veículo possui partida elétrica? ");
+                    System.out.print("O veículo possui partida elétrica? ");
                     boolean temPartidaEletrica = scanner.nextBoolean();
                     moto.setTemPartidaEletrica(temPartidaEletrica);
 
@@ -165,25 +179,33 @@ public class Main {
                         switch (opcao2) {
                             case 1:
                                 moto.ligarMotor();
+                                break;
                             case 2:
                                 moto.desligarMotor();
+                                break;
                             case 3:
                                 moto.acelerar();
+                                break;
                             case 4:
                                 moto.frear();
+                                break;
                             case 5:
                                 moto.buzinar();
+                                break;
                             case 6:
                                 moto.exibirInfoMoto();
+                                break;
                             case 0:
                                 System.out.println("Saindo.");
+                                break;
                             default:
                                 System.out.println("Opção inválida.");
                         }
-
                     } while (opcao2 != 0);
+                    break;
                 case 0:
                     System.out.println("Saindo.");
+                    break;
                 default:
                     System.out.println("Opção Inválida.");
             }

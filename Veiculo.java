@@ -86,10 +86,11 @@ public class Veiculo {
     }
 
     public void acelerar() {
-        if (motorLigado) {
+        if (this.motorLigado) {
             if (this.combustivel > 0) {
                 this.velocidadeAtual = this.velocidadeAtual + 10;
                 this.combustivel = combustivel - 0.5;
+                System.out.println("Velocidade atual: " + this.velocidadeAtual + "Km/h");
             } else {
                 System.out.println("Não é possivel acelerar sem combustível!");
             }
@@ -114,8 +115,8 @@ public class Veiculo {
         System.out.println("Marca do veículo: " + this.marca);
         System.out.println("Modelo do veículo: " + this.modelo);
         System.out.println("Ano do veículo: " + this.ano);
-        System.out.println("Velocidade atual do veículo: " + this.velocidadeAtual);
-        System.out.println("Combustivel restante: " + this.combustivel);
+        System.out.println("Velocidade atual do veículo: " + this.velocidadeAtual + "Km/h");
+        System.out.println("Combustivel restante: " + this.combustivel + "L");
         System.out.println("Estado do motor: " + (motorLigado ? "Ligado" : "Desligado"));
     }
 }
