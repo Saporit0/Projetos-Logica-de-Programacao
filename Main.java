@@ -8,12 +8,13 @@ public class Main {
         Sedan sedan = new Sedan(null, null, 0, 0, 0, false);
         Suv suv = new Suv(null, null, 0, 0, 0, 0);
         Moto moto = new Moto(null, null, 0, 0, false);
-
+        Aviao aviao = new Aviao(null, null, 0, 0, 0, true);
         do {
             System.out.println("\n Escolha um veículo:");
             System.out.println("1 - Sedan");
             System.out.println("2 - SUV");
             System.out.println("3 - Moto");
+            System.out.println("4 - Avião");
             System.out.println("0 - Sair");
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
@@ -203,6 +204,74 @@ public class Main {
                         }
                     } while (opcao2 != 0);
                     break;
+                case 4:
+                    System.out.print("Digite os dados do veículo. " + "\n");
+                    System.out.print("Digite o marca do veículo: ");
+                    String marca4 = scanner.nextLine();
+                    aviao.setMarca(marca4);
+                    System.out.print("Digite o modelo do veículo: ");
+                    String modelo4 = scanner.nextLine();
+                    aviao.setModelo(modelo4);
+                    System.out.print("Digite o ano do veículo:");
+                    int ano4 = scanner.nextInt();
+                    aviao.setAno(ano4);
+                    System.out.print("Digite a quantidade de combustível atual do veículo: ");
+                    double combustivel4 = scanner.nextDouble();
+                    aviao.setCombustivel(combustivel4);
+
+                    do {
+
+                        System.out.println("\nMenu do veículo:");
+                        System.out.println("1 - Ligar motor");
+                        System.out.println("2 - Desligar motor");
+                        System.out.println("3 - Acelerar");
+                        System.out.println("4 - Frear");
+                        System.out.println("5 - Decolar");
+                        System.out.println("6 - Subir");
+                        System.out.println("7 - Descer");
+                        System.out.println("8 - Aterrisar");
+                        System.out.println("9 - Exibir informações do veículo");
+                        System.out.println("0 - Sair");
+                        System.out.print("Escolha uma opção: ");
+                        opcao2 = scanner.nextInt();
+                        scanner.nextLine();
+
+                        switch (opcao2) {
+                            case 1:
+                                aviao.ligarMotor();
+                                break;
+                            case 2:
+                                aviao.desligarMotor();
+                                break;
+                            case 3:
+                                aviao.acelerar();
+                                break;
+                            case 4:
+                                aviao.frear();
+                                break;
+                            case 5:
+                                aviao.decolar();
+                                break;
+                            case 6:
+                                aviao.subir();
+                                break;
+                            case 7:
+                                aviao.descer();
+                                break;
+                            case 8:
+                                aviao.aterrisar();
+                                break;
+                            
+                            case 9:
+                                aviao.exibirInfoAviao();
+                                break;
+                            case 0:
+                                System.out.println("Saindo.");
+                                break;
+                            default:
+                                System.out.println("Opção inválida.");
+                        }
+                    } while (opcao2 != 0);
                 case 0:
                     System.out.println("Saindo.");
                     break;
